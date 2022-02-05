@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=\, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      #container {
+        display: grid;
+        grid-template-areas:
+          "A1 r1"
+          "A1 r2"
+          "A1 r3"
+          "l2 r4";
+        grid-gap: 10px;
+      }
+
+      #container > div {
+        border: 1px solid red;
+      }
+
+      #l1 {
+        grid-area: A1;
+      }
+      #l2 {
+        grid-area: l2;
+      }
+      #r1 {
+        grid-area: r1;
+      }
+      #r2 {
+        grid-area: r2;
+      }
+      #r3 {
+        grid-area: r3;
+      }
+      #r4 {
+        grid-area: r4;
+      }
+      .flex {
+        display: flex;
+      }
+      #l1 > img {
+        width: 100%;
+      }
+
+      .flex > p {
+        margin-left: 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="container">
+      <div id="l1">
+        <img src="https://via.placeholder.com/350x150" alt="" />
+        <h3>
+          Lorem ipsum, dolor sit amet consectetur adipisicing elit. Molestiae
+          tempore blandi
+        </h3>
+        <p>Lorem ipsum, dolor</p>
+        <p>Lorem ipsum, dolor</p>
+        <p>
+          Lorem ipsum, dolor sit amet consectetur adipisicing elit. Molestiae
+          tempore blandi
+        </p>
+      </div>
+      <div id="l2">
+        <img src="https://via.placeholder.com/150" alt="" />
+        <p>
+          National ,<br />
+          Ahmedabad glitters to welcome Donald Trump
+        </p>
+      </div>
+      <div id="r1">
+        <img src="https://via.placeholder.com/150" alt="" />
+        <p>
+          National ,<br />
+          Ahmedabad glitters to welcome Donald Trump
+        </p>
+      </div>
+      <div id="r2">
+        <img src="https://via.placeholder.com/150" alt="" />
+        <p>
+          National ,<br />
+          Ahmedabad glitters to welcome Donald Trump
+        </p>
+      </div>
+      <div id="r3">
+        <img src="https://via.placeholder.com/150" alt="" />
+        <p>
+          National ,<br />
+          Ahmedabad glitters to welcome Donald Trump
+        </p>
+      </div>
+      <div id="r4">
+        <img src="https://via.placeholder.com/150" alt="" />
+        <p>
+          National ,<br />
+          Ahmedabad glitters to welcome Donald Trump
+        </p>
+      </div>
+    </div>
+  </body>
+</html>

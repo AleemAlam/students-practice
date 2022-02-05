@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+    />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  </head>
+  <style>
+    .card {
+      margin: 10px;
+      border: 1px solid red;
+      width: 200px;
+      overflow: hidden;
+    }
+    .container {
+      display: flex;
+      padding: 10px;
+      border: 1px solid black;
+    }
+  </style>
+  <body>
+    <div id="data" class="container"></div>
+    <button id="next">Next</button>
+  </body>
+  <script>
+    const div = document.getElementById("data");
+
+    [1, 2, 3].map((item) => {
+      const newDiv = document.createElement("div");
+      newDiv.setAttribute("class", "card");
+      newDiv.innerHTML = `<img
+                            src="https://imgcld.yatra.com/ytimages/image/upload/t_seo_Holidays_w_640_h_480_c_fill_g_auto_q_auto:good_f_jpg/v1557464430/Hotel/Manali/00004709/exterior_w17rMo.jpg"
+                            alt=""
+                        />
+                        <h5>Title</h5>
+                        <p>
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugit sit eos
+                            eaque autem non nihil obcaecati officiis enim accusamus, culpa assumenda
+                            consectetur recusandae exercitationem molestiae, fuga iure debitis
+                            libero dolorem!
+                        </p>`;
+      div.append(newDiv);
+    });
+  </script>
+</html>

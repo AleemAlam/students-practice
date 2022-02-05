@@ -1,0 +1,6 @@
+f(abcd, "", 0) == abcd , a, 1
+f(abcd, a, 1) == abcd, ab, 2
+f(abcd, ab, 2) == abcd, abc, 3
+f(abcd, ab, 3) == 
+
+

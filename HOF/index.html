@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <select id="country">
+      <option value="india">India</option>
+      <option value="brazil">Brazil</option>
+      <option value="singapore">Singapore</option>
+    </select>
+    <button onclick="findContinent()">Check Continent</button>
+  </body>
+  <script>
+    function findContinent() {
+      var country = document.getElementById("country").value;
+      console.log(country);
+      switch (country) {
+        case "india": {
+          alert("Continent is Asia");
+          return;
+        }
+        case "singapore": {
+          alert("Continent is Asia");
+          return;
+        }
+
+        case "brazil": {
+          alert("Continent is South America");
+          return;
+        }
+      }
+    }
+  </script>
+</html>

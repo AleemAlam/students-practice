@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body></body>
+</html>
+
+<script>
+  const days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
+  async function getData() {
+    let data = await fetch(
+      "https://api.openweathermap.org/data/2.5/onecall?lat=36.1699&lon=115.1398&exclude=minutely,hourly&appid=58feccf8f4b05447650ca18c81d6f659"
+    );
+    data = await data.json();
+    console.log(data);
+    var date = new Date(data.daily[0].dt).toString();
+    date = date.split(" ")[0];
+    let startDay = 0;
+    for (let i = 0; i < 7; i++) {
+      console.log(days[i] == date);
+      if (days[i] == date) {
+        startDay = i;
+        break;
+      }
+    }
+    for (let i = 0; i < 7; i++) {
+      if (startDay == 7) {
+        startDay = 0;
+      }
+      console.log(days[startDay], startDay);
+      startDay++;
+    }
+  }
+  getData();
+</script>

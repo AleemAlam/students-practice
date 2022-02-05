@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .grid-container {
+        width: 800px;
+        display: grid;
+        grid-template-areas:
+          "a b c"
+          "d e f";
+        margin: auto;
+      }
+
+      .card {
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+        transition: 0.3s;
+        margin: 10px;
+        border-radius: 3px;
+        overflow: hidden;
+        padding: 5px 10px;
+      }
+      #first {
+        grid-area: c;
+        background-color: red;
+      }
+      #second {
+        grid-area: b;
+        background-color: yellow;
+      }
+      #third {
+        grid-area: a;
+        background-color: green;
+      }
+      #forth {
+        grid-area: d;
+        background-color: purple;
+      }
+      #fifth {
+        grid-area: e;
+        background-color: blue;
+      }
+      #sixth {
+        grid-area: f;
+        background-color: black;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="grid-container">
+      <div id="first" class="card">
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsum
+          doloremque exercitationem qui optio dignissimos mollitia quod maxime
+          veniam nihil, veritatis quasi quas quaerat iste repellendus minus
+          deserunt odit eaque? Distinctio.
+        </p>
+      </div>
+      <div id="second" class="card">
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsum
+          doloremque exercitationem qui optio dignissimos mollitia quod maxime
+          veniam nihil, veritatis quasi quas quaerat iste repellendus minus
+          deserunt odit eaque? Distinctio.
+        </p>
+      </div>
+      <div id="third" class="card">
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsum
+          doloremque exercitationem qui optio dignissimos mollitia quod maxime
+          veniam nihil, veritatis quasi quas quaerat iste repellendus minus
+          deserunt odit eaque? Distinctio.
+        </p>
+      </div>
+      <div id="forth" class="card">
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsum
+          doloremque exercitationem qui optio dignissimos mollitia quod maxime
+          veniam nihil, veritatis quasi quas quaerat iste repellendus minus
+          deserunt odit eaque? Distinctio.
+        </p>
+      </div>
+      <div id="fifth" class="card">
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsum
+          doloremque exercitationem qui optio dignissimos mollitia quod maxime
+          veniam nihil, veritatis quasi quas quaerat iste repellendus minus
+          deserunt odit eaque? Distinctio.
+        </p>
+      </div>
+      <div id="sixth" class="card">
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsum
+          doloremque exercitationem qui optio dignissimos mollitia quod maxime
+          veniam nihil, veritatis quasi quas quaerat iste repellendus minus
+          deserunt odit eaque? Distinctio.
+        </p>
+      </div>
+    </div>
+  </body>
+</html>

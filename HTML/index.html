@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .grid-container {
+        width: 800px;
+        display: grid;
+        /* grid-template-columns: auto auto auto; */
+        grid-template-columns: repeat(3, 30%);
+        margin: auto;
+      }
+
+      .card {
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+        transition: 0.3s;
+        margin: 10px;
+        border-radius: 3px;
+        overflow: hidden;
+      }
+      .card:hover {
+        box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+      }
+      .container {
+        padding: 2px 16px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="grid-container">
+      <div class="card">
+        <img src="https://via.placeholder.com/250" alt="img" />
+        <div class="container">
+          <h4>Ashok</h4>
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Debitis
+            atque quo est, dolorum aspernatur iure possimus maxime repudiandae
+            sint voluptatibus minima rerum vel consequuntur neque suscipit quas
+            distinctio fugit nulla.
+          </p>
+        </div>
+      </div>
+      <div class="card">
+        <img src="https://via.placeholder.com/250" alt="img" />
+        <div class="container">
+          <h4>Ashok</h4>
+          <p>Full stack web developer</p>
+        </div>
+      </div>
+      <div class="card">
+        <img src="https://via.placeholder.com/250" alt="img" />
+        <div class="container">
+          <h4>Ashok</h4>
+          <p>Full stack web developer</p>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

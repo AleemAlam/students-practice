@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <form id="addItem">
+      <div>
+        <input type="text" id="title" placeholder="title" />
+      </div>
+      <div>
+        <textarea
+          id="description"
+          cols="20"
+          rows="5"
+          placeholder="Description"
+        ></textarea>
+      </div>
+      <div>
+        <input type="text" id="price" placeholder="Price" />
+      </div>
+      <button>Add</button>
+    </form>
+    <table id="data">
+      <thead>
+        <tr>
+          <th>Title</th>
+          <th>Description</th>
+          <th>price</th>
+        </tr>
+      </thead>
+      <tbody id="bodyData"></tbody>
+    </table>
+  </body>
+  <script>
+    var form = document.getElementById("addItem");
+    var allData = JSON.parse(localStorage.getItem("data")) || [];
+    form.addEventListener("submit", function (e) {
+      e.preventDefault();
+      var title = form.title.value;
+      var description = form.description.value;
+      var price = form.price.value;
+      document.getElementById("bodyData").textContent = "";
+      allData.push({ title, description, price });
+      addAllData();
+      localStorage.setItem("data", JSON.stringify(allData));
+    });
+    var table = document.getElementById("bodyData");
+    function addData(item) {
+      var tr = document.createElement("tr");
+      var title = document.createElement("td");
+      var des = document.createElement("td");
+      var price = document.createElement("td");
+      title.textContent = item.title;
+      des.textContent = item.description;
+      price.textContent = item.price;
+      tr.append(title, des, price);
+
+      table.append(tr);
+    }
+    console.log(allData);
+    function addAllData() {
+      allData.map(function (item) {
+        addData(item);
+      });
+    }
+    addAllData();
+  </script>
+</html>

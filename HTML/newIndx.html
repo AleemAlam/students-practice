@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      #parent {
+        width: 200px;
+        height: 200px;
+        border: 1px solid black;
+      }
+      #child {
+        width: 100px;
+        height: 100px;
+        margin: 25px;
+        border: 1px solid red;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="parent">
+      <img
+        id="imgSlider"
+        src="https://images.unsplash.com/photo-1453728013993-6d66e9c9123a?ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8dmlld3xlbnwwfHwwfHw%3D&ixlib=rb-1.2.1&w=1000&q=80"
+        alt=""
+      />
+    </div>
+  </body>
+  <script>
+    document.getElementById("parent").addEventListener("click", parent);
+    var image = document.getElementById("imgSlider");
+    var address = [
+      "https://images.unsplash.com/photo-1453728013993-6d66e9c9123a?ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8dmlld3xlbnwwfHwwfHw%3D&ixlib=rb-1.2.1&w=1000&q=80",
+      "https://cdn.pixabay.com/photo/2015/04/23/22/00/tree-736885__480.jpg",
+    ];
+    var count = 0;
+    setInterval(function () {
+      if (count == 2) {
+        count = 0;
+      }
+      image.src = address[count];
+      count++;
+    }, 2000);
+  </script>
+</html>

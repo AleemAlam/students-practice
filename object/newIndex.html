@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <style>
+      #layout {
+        display: grid;
+        grid-template-areas:
+          "e f g"
+          "h i i"
+          "j j j";
+        gap: 25px;
+        justify-content: center;
+      }
+      #layout > div {
+        background-color: teal;
+        border-radius: 5px;
+        width: 150px;
+        height: 150px;
+      }
+      #e {
+        grid-area: e;
+      }
+      #f {
+        grid-area: f;
+      }
+      #g {
+        grid-area: g;
+      }
+      #h {
+        grid-area: h;
+      }
+      #i {
+        grid-area: i;
+      }
+      #j {
+        grid-area: j;
+      }
+      #layout > div:nth-child(5) {
+        width: 325px;
+      }
+    </style>
+    <title>Document</title>
+  </head>
+  <body>
+    <div id="layout">
+      <div id="e"></div>
+      <div id="f"></div>
+      <div id="g"></div>
+      <div id="h"></div>
+      <div id="i"></div>
+      <div id="j"></div>
+    </div>
+  </body>
+</html>

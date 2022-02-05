@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <style>
+    #wall {
+      display: grid;
+      grid-template-columns: repeat(2, 45%);
+      grid-gap: 5%;
+      justify-content: center;
+    }
+    .butt {
+      margin-top: 2%;
+      width: 30%;
+      background-color: #ffebee;
+      color: #f44336;
+      border-radius: 4px;
+      font-weight: bold;
+      border-color: #f44336;
+    }
+    .category {
+      font-size: 22px;
+      font-weight: bold;
+    }
+    #main {
+      width: 100%;
+      height: 70px;
+      /* border:1px solid red; */
+      text-align: center;
+      display: flex;
+    }
+    #main > button {
+      margin: auto;
+      width: 20%;
+      height: 40%;
+      background-color: black;
+      color: white;
+      border: none;
+      border-radius: 5px;
+    }
+    #bkt {
+      margin-top: 4%;
+      background-color: white;
+      color: black;
+      font-size: 22px;
+      width: 20%;
+      height: 30%;
+    }
+  </style>
+  <body>
+    <h1 style="text-align: center">
+      WE Try to Create MENU For Bar Dishes Use API Data
+    </h1>
+    <div id="main">
+      <button>MENU</button>
+      <button>SignUp</button>
+      <button>SignIn</button>
+    </div>
+    <a href="cart.html"> <button id="bkt">GO TO CART PAGE</button></a>
+    <div id="wall"></div>
+    <div id="k"></div>
+    <!-- <button onclick="getaldetail()">Click</button> -->
+  </body>
+  <script>
+    let c = 0;
+    //let url ="https://www.themealdb.com/api.php?ref=apilist.fun";
+    let url = "https://www.themealdb.com/api/json/v1/1/categories.php";
+    //let url = "https://www.themealdb.com/api.php?ref=apilist.fun,"
+    var main = document.getElementById("wall");
+    async function getaldetails() {
+      try {
+        let response = await fetch(url);
+        let data = await response.json();
+        console.log("data", data);
+        addproduct(data.categories);
+      } catch (err) {
+        console.log("err", err);
+      }
+    }
+    function addproduct(products) {
+      products.forEach(function (product) {
+        let main = document.createElement("div");
+        let image = document.createElement("img");
+        image.src = product.strCategoryThumb;
+        let price = document.createElement("p");
+        price.innerText = "Price-" + product.idCategory * 100;
+        let catgory = document.createElement("p");
+        catgory.setAttribute("class", "category");
+        catgory.innerText = product.strCategory;
+        let decriptionn = document.createElement("div");
+        decriptionn = product.strCategoryDescription;
+        let button = document.createElement("button");
+        button.textContent = "ADD TO CART";
+        button.setAttribute("class", "butt");
+        let count = document.createElement("p");
+        count.innerText = c;
+        let countpshow = document.getElementById("k");
+        button.onclick = function () {
+          AddTocart(product);
+          c++;
+          console.log("c", c);
+        };
+        main.append(image, catgory, price, decriptionn, button);
+        wall.append(main);
+      });
+    }
+    getaldetails();
+    if (localStorage.getItem("SHOPPING") === null) {
+      localStorage.setItem("SHOPPING", JSON.stringify([]));
+    }
+    function AddTocart(e) {
+      let cartprodut = JSON.parse(localStorage.getItem("SHOPPING"));
+      cartprodut.push(e);
+      localStorage.setItem("SHOPPING", JSON.stringify(cartprodut));
+      console.log("cartproduct", cartprodut);
+    }
+  </script>
+</html>

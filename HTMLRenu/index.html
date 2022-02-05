@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <!-- <button id="objects">Objects</button>
+    <button id="array">Array</button>
+    <div id="data"></div> -->
+    <input type="task" id="task" />
+    <button id="addTask">Add Task</button>
+    <div id="data"></div>
+  </body>
+  <!-- <script src="./mini.js"></script> -->
+  <script>
+    document.getElementById("addTask").addEventListener("click", addTasks);
+    const data = document.getElementById("data");
+    function addTasks() {
+      let input = document.getElementById("task").value;
+      const myTask = new Task(input, Date().toString());
+      showTask(myTask);
+    }
+    function showTask(task) {
+      const h1 = document.createElement("h1");
+      const p = document.createElement("p");
+      const button = document.createElement("button");
+      h1.textContent = task.title;
+      p.textContent = task.date;
+      button.textContent = task.status;
+      data.append(h1, p, button);
+    }
+    function Task(title, date) {
+      this.title = title;
+      this.date = date;
+      this.status = false;
+    }
+  </script>
+</html>

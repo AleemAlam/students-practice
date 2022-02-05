@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Document</title>
+  </head>
+
+  <body>
+    <h1 id="test"></h1>
+    <input type="text" id="meal" placeholder="Enter Dish Name" />
+    <button id="btn">Click</button>
+    <div id="main"></div>
+  </body>
+</html>
+<script>
+  document.getElementById("btn").addEventListener("click", function () {
+    getMeal();
+  });
+  async function getMeal() {
+    var div = document.getElementById("main");
+    let meal = document.getElementById("meal").value;
+    let url = `https://www.themealdb.com/api/json/v1/1/search.php?s=${meal}`;
+
+    let res = await fetch(url);
+    let data = await res.json();
+    console.log(data); //   data.map(function(item){ //   })
+    data.meals.map(function (item) {
+      let mealName = document.createElement("h1");
+      mealName.textContent = item.strMeal;
+      div.append(mealName);
+    });
+  }
+</script>
